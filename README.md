@@ -32,10 +32,10 @@ For image and PDF processing tasks, you may want to install:
 
 ## Setup
 
-1. Install core dependencies:
+1. Install core dependencies (assuming you already have Homebrew/Node.js/pnpm already installed):
 
    ```bash
-   brew install node pnpm python uv
+   brew install uv
    ```
 
 2. (Optional) Install media processing tools:

@@ -1,0 +1,58 @@
+---
+alwaysApply: true
+---
+
+# Agent Playground - Project Guidelines
+
+## Project Overview
+
+This is an AI agent playground for generating autonomous scripts and workflows. All agents are designed to perform complex, multi-step tasks including web automation, bookings, data research, and administrative functions.
+
+## Agent Development Process
+
+1. **Planning First**: Always come up with a good plan before executing any task
+2. **Write and run typescript or python code**: Write and run typescript/python code to test your ideas. For anything that is best done programmatically, like math or other types of logic, then just write a quick TypeScript/python program and run it.
+3. **ALWAYS prefer running executables vs writing scripts**: Running executables is faster than writing scripts.
+4. **Data from the web**: Use the `web_search` and `mcp_browsermcp` tools to get data from the web. Never use the `mcp_browsermcp` tool to Google search - you should use the dedicated `web_search` tool for that as it's more reliable.
+5. **Use unix principles**: Use unix principles to build your scripts. Use `stdin` and `stdout`. Use `|` to chain commands together.
+6. **Stream output**: Stream output to the console. e.g. when processing CSVs, output line by line.
+7. **Never alter a file in the `data/` directory in-place**: Always either produce a copy or, if you're editing textual data, use `stdin` and `stdout` to edit the data.
+
+## AI SDK
+
+To communicate with AI providers, use the Vercel AI SDK.
+
+- **Use Vercel AI SDK**: Use the AI SDK directly with providers like `@ai-sdk/openai`, `@ai-sdk/anthropic`, `@ai-sdk/google`
+- **No Custom Abstractions**: Don't create custom AI client wrappers - use the SDK directly
+- Environment variables for AI providers are automatically handled by Vercel AI SDK
+- No need to manually check or validate API keys in code
+- Standard variables: `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GOOGLE_GENERATIVE_AI_API_KEY`
+
+## Project Structure
+
+- `lib/` - Reusable utilities and shared code
+- `scripts/` - Runnable task scripts (use tsx for execution)
+- `types/` - Shared TypeScript type definitions
+- `data/` - Storage for data files (Markdown and CSV)
+
+## Package Management
+
+- **TypeScript/Node.js**: Always use `pnpm` for package management
+- **Python**: Always use `uv` for package management (10-100x faster than pip)
+- Run TypeScript scripts with `pnpm start scripts/script_name.ts`
+- Run Python scripts with `uv run scripts/script_name.py`
+
+## Data Storage Guidelines
+
+- Use **Markdown** for general data storage and documentation
+- Use **CSV** for tabular data
+- Store all data files in the `data/` directory
+
+## Code generation
+
+- You make generate both typescript and python code
+- Never write tests for code you generate
+
+## Google Maps MCP
+
+- Use the `mcp_google-maps` tool to get data from Google Maps

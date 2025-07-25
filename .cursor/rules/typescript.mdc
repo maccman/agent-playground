@@ -1,0 +1,26 @@
+---
+alwaysApply: true
+---
+
+# TypeScript
+
+- **TypeScript is available under the `tsx` command.**
+- **Use `pnpm install` to install dependencies.**
+- **Env vars should be loaded from the `.env` file using `dotenv` - make sure you use `import { config } from 'dotenv'` to load the env vars.**
+
+Use TypeScript when TypeScript standard libraries make it best path forward. For example, PDF processing.
+
+Prefer typescript over python for any task that can be done in typescript.
+
+**Suggested packages (TypeScript/Node.js):**
+
+- **PDF Generation:** [`pdfkit`](https://www.npmjs.com/package/pdfkit)
+- **PDF extraction:** [`pdf-parse`](https://www.npmjs.com/package/pdf-parse) or [`pdfjs-dist`](https://www.npmjs.com/package/pdfjs-dist)
+- **Data analysis:** [`danfojs-node`](https://www.npmjs.com/package/danfojs-node) (pandas-like DataFrame for Node.js)
+- **CSV reading/writing:** [`csv-parse`](https://www.npmjs.com/package/csv-parse), [`csv-stringify`](https://www.npmjs.com/package/csv-stringify), or [`papaparse`](https://www.npmjs.com/package/papaparse)
+- **Data visualization:** [`vega`](https://www.npmjs.com/package/vega) or [`vega-lite`](https://www.npmjs.com/package/vega-lite) (for programmatic chart generation), or [`plotly.js`](https://www.npmjs.com/package/plotly.js) for interactive charts
+- **OCR:** OCR is currently not supported in Node.js/TypeScript (no reliable, maintained package)
+- **Table/markdown formatting:** [`cli-table3`](https://www.npmjs.com/package/cli-table3) for console tables, [`markdown-table`](https://www.npmjs.com/package/markdown-table) for Markdown output
+- **Excel:** [`exceljs`](https://www.npmjs.com/package/exceljs)
+- **HTML parsing:** [`cheerio`](https://www.npmjs.com/package/cheerio) (jQuery-like HTML parsing for Node.js)
+- **Markdown parsing:** [`marked`](https://www.npmjs.com/package/marked)

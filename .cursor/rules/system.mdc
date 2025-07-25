@@ -1,0 +1,26 @@
+---
+alwaysApply: true
+---
+
+You're running on a MacBook Air with an Apple M4 chip 32mm and Mac OS Sequoia 15.5.
+If a command line executive can do what you need, then just use it rather than write a script.
+
+You have access to the following cli tools but you can always install more using Homebrew.
+
+# Available image/pdf homebrew packages
+
+- sips (Scriptable Image Processing System)
+- ImageMagick
+- Ghostscript
+- ffmpeg
+
+# Package managers
+
+- Homebrew
+- pnpm (TypeScript/Node.js)
+- uv (Python - extremely fast package manager)
+
+# Available languages
+
+- TypeScript (tsx)
+- Python (python3)

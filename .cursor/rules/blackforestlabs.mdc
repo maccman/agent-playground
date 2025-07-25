@@ -1,0 +1,168 @@
+---
+alwaysApply: false
+---
+
+# Black Forest Labs
+
+You have access to the Black Forest Labs API. You can use the API to generate images, edit images, and more.
+
+API Keys are stored in the `.env` file under `BLACK_FOREST_LABS_API_KEY`. This is available - you do not need to check if it is set. Just load the env with `import { config } from 'dotenv'` and then `config()`.
+
+## About Black Forest Labs
+
+Black Forest Labs (BFL) is a frontier AI lab that builds state-of-the-art generative AI models, specializing in advanced text-to-image generation and image editing capabilities.
+
+### Core Capabilities
+
+**Image Generation Models:**
+
+- **FLUX.1 Series**: Advanced text-to-image generation models including FLUX.1 [pro], FLUX.1 [dev], and FLUX 1.1 [pro]
+- **FLUX Kontext**: Contextual image generation and editing that understands both text and image inputs
+- **Ultra & Raw Modes**: High-resolution generation (up to 4MP) and authentic, candid photography styles
+
+**Specialized Tools:**
+
+- **FLUX.1 Fill**: Inpainting and outpainting capabilities
+- **FLUX.1 Depth**: Depth-guided image generation
+- **FLUX.1 Canny**: Edge-guided structural control
+- **FLUX.1 Redux**: Combines input images with text prompts for new compositions
+
+Black Forest Labs has positioned itself at the forefront of AI image generation technology, offering both cutting-edge research and practical tools for creators, developers, and businesses.
+
+## Docs
+
+- [Report Model Usage](https://docs.bfl.ml/api-reference/models/report-model-usage.md)
+- [Edit or create an image with Flux Kontext Max](https://docs.bfl.ml/api-reference/tasks/edit-or-create-an-image-with-flux-kontext-max.md)
+- [Edit or create an image with Flux Kontext Pro](https://docs.bfl.ml/api-reference/tasks/edit-or-create-an-image-with-flux-kontext-pro.md)
+- [Expand an image by adding pixels on any side.](https://docs.bfl.ml/api-reference/tasks/expand-an-image-by-adding-pixels-on-any-side.md): Submits an image expansion task that adds the specified number of pixels to any combination of sides (top, bottom, left, right) while maintaining context.
+- [Finetune](https://docs.bfl.ml/api-reference/tasks/finetune.md)
+- [Generate an image with FLUX 1.1 [pro].](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux-11-[pro].md): Submits an image generation task with FLUX 1.1 [pro].
+- [Generate an image with FLUX 1.1 [pro] finetune with ultra mode.](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux-11-[pro]-finetune-with-ultra-mode.md): Submits an image generation task with FLUX 1.1 [pro] finetune with ultra mode.
+- [Generate an image with FLUX 1.1 [pro] with ultra mode and optional raw mode.](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux-11-[pro]-with-ultra-mode-and-optional-raw-mode.md): Submits an image generation task with FLUX 1.1 [pro] with ultra mode and optional raw mode.
+- [Generate an image with FLUX [pro] finetune.](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux-[pro]-finetune.md): Submits an image generation task with FLUX [pro] finetune.
+- [Generate an image with FLUX.1 [dev].](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux1-[dev].md): Submits an image generation task with FLUX.1 [dev].
+- [Generate an image with FLUX.1 [pro].](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux1-[pro].md): Submits an image generation task with the FLUX.1 [pro].
+- [Generate an image with FLUX.1 Canny [pro] finetune using a control image.](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux1-canny-[pro]-finetune-using-a-control-image.md): Submits an image generation task with FLUX.1 Canny [pro] finetune.
+- [Generate an image with FLUX.1 Canny [pro] using a control image.](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux1-canny-[pro]-using-a-control-image.md): Submits an image generation task with FLUX.1 Canny [pro].
+- [Generate an image with FLUX.1 Depth [pro] finetune using a control image.](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux1-depth-[pro]-finetune-using-a-control-image.md): Submits an image generation task with FLUX.1 Depth [pro] finetune.
+- [Generate an image with FLUX.1 Depth [pro] using a control image.](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux1-depth-[pro]-using-a-control-image.md): Submits an image generation task with FLUX.1 Depth [pro].
+- [Generate an image with FLUX.1 Fill [pro] finetune using an input image and mask.](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux1-fill-[pro]-finetune-using-an-input-image-and-mask.md): Submits an image generation task with the FLUX.1 Fill [pro] finetune model using an input image and mask. Mask can be applied to alpha channel or submitted as a separate image.
+- [Generate an image with FLUX.1 Fill [pro] using an input image and mask.](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux1-fill-[pro]-using-an-input-image-and-mask.md): Submits an image generation task with the FLUX.1 Fill [pro] model using an input image and mask. Mask can be applied to alpha channel or submitted as a separate image.
+- [Delete Finetune](https://docs.bfl.ml/api-reference/utility/delete-finetune.md): Delete a finetune_id that was created by the user
+- [Finetune Details](https://docs.bfl.ml/api-reference/utility/finetune-details.md): Get details about the training parameters and other metadata connected to a specific finetune_id that was created by the user.
+- [Get Result](https://docs.bfl.ml/api-reference/utility/get-result.md): An endpoint for getting generation task result.
+- [My Finetunes](https://docs.bfl.ml/api-reference/utility/my-finetunes.md): List all finetune_ids created by the user
+- [FLUX Finetuning Guide](https://docs.bfl.ml/finetuning.md)
+- [Prompting Guide - Image-to-Image](https://docs.bfl.ml/guides/prompting_guide_kontext_i2i.md)
+- [FLUX API Integration Guide](https://docs.bfl.ml/integration_guidelines.md): Learn best essantial information for integrating with FLUX API endpoints, including endpoint selection, polling best practices, and proper handling of generated content.
+- [Image Editing](https://docs.bfl.ml/kontext/kontext_image_editing.md)
+- [Image Generation](https://docs.bfl.ml/kontext/kontext_text_to_image.md)
+- [Create API Account](https://docs.bfl.ml/quick_start/create_account.md): Step-by-step guide to create your Black Forest Labs account, generate API keys, and start using FLUX AI image generation models in minutes.
+- [Image Generation with Text Prompts](https://docs.bfl.ml/quick_start/generating_images.md): Complete guide to FLUX API endpoints for AI image generation. Learn text-to-image creation, API polling, regional endpoints, and code examples.
+- [Welcome to BFL Documentation!](https://docs.bfl.ml/quick_start/introduction.md): Black Forest Labs builds state-of-the-art generative AI models
+- [Add Credits & Billing](https://docs.bfl.ml/quick_start/managing_account.md): Learn how to add credits to your FLUX API account for AI image generation. Manage billing, payments, and account settings through the dashboard.
+
+## Optional
+
+- [BFL Homepage](https://bfl.ai)
+- [Help Center](https://help.bfl.ai)
+
+# Black Forest Labs
+
+You have access to the Black Forest Labs API. You can use the API to generate images, edit images, and more.
+
+API Keys are stored in the `.env` file under `BLACKFOREST_LAB_API_KEY`.
+
+## About Black Forest Labs
+
+Black Forest Labs (BFL) is a frontier AI lab that builds state-of-the-art generative AI models, specializing in advanced text-to-image generation and image editing capabilities. Founded by AI researchers and engineers, BFL has established itself as a leading company in the generative AI space.
+
+### Core Capabilities
+
+**Image Generation Models:**
+
+- **FLUX.1 Series**: Advanced text-to-image generation models including FLUX.1 [pro], FLUX.1 [dev], and FLUX 1.1 [pro]
+- **FLUX Kontext**: Contextual image generation and editing that understands both text and image inputs
+- **Ultra & Raw Modes**: High-resolution generation (up to 4MP) and authentic, candid photography styles
+
+**Key Features:**
+
+- **Speed**: FLUX 1.1 [pro] offers 6x faster generation than previous models
+- **Quality**: Superior prompt adherence and image quality, ranking highest on AI evaluation benchmarks
+- **Versatility**: Supports text-to-image, image-to-image, inpainting, outpainting, and style transfer
+- **Control**: Advanced tools for character consistency, local editing, and style reference
+
+**Product Offerings:**
+
+- **API Access**: Commercial API for developers and businesses
+- **Open Source**: FLUX.1 [dev] available under open licenses
+- **Platform Integrations**: Available on multiple platforms including Replicate, ComfyUI, and various AI art platforms
+
+**Specialized Tools:**
+
+- **FLUX.1 Fill**: Inpainting and outpainting capabilities
+- **FLUX.1 Depth**: Depth-guided image generation
+- **FLUX.1 Canny**: Edge-guided structural control
+- **FLUX.1 Redux**: Combines input images with text prompts for new compositions
+
+Black Forest Labs has positioned itself at the forefront of AI image generation technology, offering both cutting-edge research and practical tools for creators, developers, and businesses.
+
+## Docs
+
+- [Report Model Usage](https://docs.bfl.ml/api-reference/models/report-model-usage.md)
+- [Edit or create an image with Flux Kontext Max](https://docs.bfl.ml/api-reference/tasks/edit-or-create-an-image-with-flux-kontext-max.md)
+- [Edit or create an image with Flux Kontext Pro](https://docs.bfl.ml/api-reference/tasks/edit-or-create-an-image-with-flux-kontext-pro.md)
+- [Expand an image by adding pixels on any side.](https://docs.bfl.ml/api-reference/tasks/expand-an-image-by-adding-pixels-on-any-side.md): Submits an image expansion task that adds the specified number of pixels to any combination of sides (top, bottom, left, right) while maintaining context.
+- [Finetune](https://docs.bfl.ml/api-reference/tasks/finetune.md)
+- [Generate an image with FLUX 1.1 [pro].](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux-11-[pro].md): Submits an image generation task with FLUX 1.1 [pro].
+- [Generate an image with FLUX 1.1 [pro] finetune with ultra mode.](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux-11-[pro]-finetune-with-ultra-mode.md): Submits an image generation task with FLUX 1.1 [pro] finetune with ultra mode.
+- [Generate an image with FLUX 1.1 [pro] with ultra mode and optional raw mode.](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux-11-[pro]-with-ultra-mode-and-optional-raw-mode.md): Submits an image generation task with FLUX 1.1 [pro] with ultra mode and optional raw mode.
+- [Generate an image with FLUX [pro] finetune.](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux-[pro]-finetune.md): Submits an image generation task with FLUX [pro] finetune.
+- [Generate an image with FLUX.1 [dev].](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux1-[dev].md): Submits an image generation task with FLUX.1 [dev].
+- [Generate an image with FLUX.1 [pro].](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux1-[pro].md): Submits an image generation task with the FLUX.1 [pro].
+- [Generate an image with FLUX.1 Canny [pro] finetune using a control image.](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux1-canny-[pro]-finetune-using-a-control-image.md): Submits an image generation task with FLUX.1 Canny [pro] finetune.
+- [Generate an image with FLUX.1 Canny [pro] using a control image.](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux1-canny-[pro]-using-a-control-image.md): Submits an image generation task with FLUX.1 Canny [pro].
+- [Generate an image with FLUX.1 Depth [pro] finetune using a control image.](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux1-depth-[pro]-finetune-using-a-control-image.md): Submits an image generation task with FLUX.1 Depth [pro] finetune.
+- [Generate an image with FLUX.1 Depth [pro] using a control image.](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux1-depth-[pro]-using-a-control-image.md): Submits an image generation task with FLUX.1 Depth [pro].
+- [Generate an image with FLUX.1 Fill [pro] finetune using an input image and mask.](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux1-fill-[pro]-finetune-using-an-input-image-and-mask.md): Submits an image generation task with the FLUX.1 Fill [pro] finetune model using an input image and mask. Mask can be applied to alpha channel or submitted as a separate image.
+- [Generate an image with FLUX.1 Fill [pro] using an input image and mask.](https://docs.bfl.ml/api-reference/tasks/generate-an-image-with-flux1-fill-[pro]-using-an-input-image-and-mask.md): Submits an image generation task with the FLUX.1 Fill [pro] model using an input image and mask. Mask can be applied to alpha channel or submitted as a separate image.
+- [Delete Finetune](https://docs.bfl.ml/api-reference/utility/delete-finetune.md): Delete a finetune_id that was created by the user
+- [Finetune Details](https://docs.bfl.ml/api-reference/utility/finetune-details.md): Get details about the training parameters and other metadata connected to a specific finetune_id that was created by the user.
+- [Get Result](https://docs.bfl.ml/api-reference/utility/get-result.md): An endpoint for getting generation task result.
+- [My Finetunes](https://docs.bfl.ml/api-reference/utility/my-finetunes.md): List all finetune_ids created by the user
+- [FLUX Finetuning Guide](https://docs.bfl.ml/finetuning.md)
+- [Prompting Guide - Image-to-Image](https://docs.bfl.ml/guides/prompting_guide_kontext_i2i.md)
+- [FLUX API Integration Guide](https://docs.bfl.ml/integration_guidelines.md): Learn best essantial information for integrating with FLUX API endpoints, including endpoint selection, polling best practices, and proper handling of generated content.
+- [Image Editing](https://docs.bfl.ml/kontext/kontext_image_editing.md)
+- [Image Generation](https://docs.bfl.ml/kontext/kontext_text_to_image.md)
+- [Create API Account](https://docs.bfl.ml/quick_start/create_account.md): Step-by-step guide to create your Black Forest Labs account, generate API keys, and start using FLUX AI image generation models in minutes.
+- [Image Generation with Text Prompts](https://docs.bfl.ml/quick_start/generating_images.md): Complete guide to FLUX API endpoints for AI image generation. Learn text-to-image creation, API polling, regional endpoints, and code examples.
+- [Welcome to BFL Documentation!](https://docs.bfl.ml/quick_start/introduction.md): Black Forest Labs builds state-of-the-art generative AI models
+- [Add Credits & Billing](https://docs.bfl.ml/quick_start/managing_account.md): Learn how to add credits to your FLUX API account for AI image generation. Manage billing, payments, and account settings through the dashboard.
+
+## Optional
+
+- [BFL Homepage](https://bfl.ai)
+- [Help Center](https://help.bfl.ai)
+
+## API Implementation Notes
+
+### Status Values for Task Polling
+
+**IMPORTANT:** When polling the BFL API for task results using the `/get_result` endpoint, the status values are:
+
+- `"Ready"` - Task completed successfully (NOT "completed")
+- `"Error"` - Task failed with an error
+- `"Failed"` - Task failed
+- Other statuses during processing (like "Pending", "Running")
+
+**Key Implementation Detail:** Always use `.toLowerCase()` when comparing status values to handle case sensitivity, and check for `"ready"` not `"completed"` for successful completion.
+
+```typescript
+// Correct way to check status
+if (result.status.toLowerCase() === 'ready' && result.result?.sample) {
+  // Task completed successfully
+}
+```
+
+**Common Mistake:** Assuming standard REST API status values like "completed" - always check the specific API documentation rather than assuming generic patterns.

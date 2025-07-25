@@ -1,0 +1,131 @@
+---
+alwaysApply: true
+---
+
+# Python
+
+Python is available under the `python3` command, but **use `uv` for all Python project management**.
+
+**Project Setup with UV:**
+
+- **Create projects:** `uv init project-name` for new projects
+- **Virtual environments:** `uv venv` (80x faster than python -m venv)
+- **Install packages:** `uv add package-name` (10-100x faster than pip)
+- **Install from requirements:** `uv pip install -r requirements.txt`
+- **Run scripts:** `uv run script.py` (automatically manages dependencies)
+- **Python versions:** `uv python install 3.11` to install specific versions
+
+**Environment & Dependencies:**
+
+- Env vars should be loaded from the `.env` file
+- UV automatically creates and manages virtual environments
+- Use `uv sync` to install all project dependencies from lockfile
+- Use `uv lock` to generate platform-independent lockfiles
+
+**Suggested packages:**
+
+- **PDF extraction:** \`PdfReader\`
+- **Data analysis:** \`pandas\`
+- **Peeking or data analysis of CSVs:** \`pandas\`
+- **Data visualization:** \`matplotlib\` with the \`SVG\` backend
+- **OCR:** OCR is currently not supported.
+- **Table/markdown formatting:** \`tabulate\`
+- **Excel:** \`openpyxl\`
+- **HTML parsing:** \`html5lib\`
+
+**Plotting:**
+
+- Use matplotlib unless the user requests seaborn or something else.
+- Default to using the \`SVG\` backend.
+- Don't style charts with specific colors unless requested.
+- Each plot should be in its own figure (no subplots unless asked).
+- Label axes, set a clear title, and format values for readability (e.g. ".0%" for percentages).
+- Use tight_layout() to avoid clipped labels.
+- Generate big charts, they can be scaled down later.
+
+**Working with pandas & counts / aggregations:**
+
+- \`value_counts()\` and \`groupby(...).size()\` return a **Series**.  
+  If you need a DataFrame with a named column of counts, convert with  
+  \`.\`reset_index(name="count")\` (or another explicit name).
+- Do **not** try to access a \`'count'\` column on the raw Series that comes back
+  from \`value_counts()\`—create the column first as shown above.
+- When dividing or comparing aggregated results, make sure the Series /
+  DataFrames share the same index (use \`.\`align()\`), or merge first:
+  \`df_a.merge(df_b, left_on=..., right_on=...)\`.
+
+**Best Practices:**
+
+- Use assert statements for sanity checks when appropriate.
+- Use context managers (with blocks) for file handling.
+- Catch exceptions narrowly (except ValueError, not a blanket except).
+
+**Avoid:**
+
+- Wildcard imports (e.g., from x import \*)
+- Overuse of lambda — define named functions if reused or non-trivial.
+- Nested list comprehensions (use loops for clarity)
+
+# Python
+
+Python is available under the `python3` command, but **use `uv` for all Python project management**.
+
+**Project Setup with UV:**
+
+- **Create projects:** `uv init project-name` for new projects
+- **Virtual environments:** `uv venv` (80x faster than python -m venv)
+- **Install packages:** `uv add package-name` (10-100x faster than pip)
+- **Install from requirements:** `uv pip install -r requirements.txt`
+- **Run scripts:** `uv run script.py` (automatically manages dependencies)
+- **Python versions:** `uv python install 3.11` to install specific versions
+
+**Environment & Dependencies:**
+
+- Env vars should be loaded from the `.env` file
+- UV automatically creates and manages virtual environments
+- Use `uv sync` to install all project dependencies from lockfile
+- Use `uv lock` to generate platform-independent lockfiles
+
+**Suggested packages:**
+
+- **PDF extraction:** \`PdfReader\`
+- **Data analysis:** \`pandas\`
+- **Peeking or data analysis of CSVs:** \`pandas\`
+- **Data visualization:** \`matplotlib\` with the \`SVG\` backend
+- **OCR:** OCR is currently not supported.
+- **Table/markdown formatting:** \`tabulate\`
+- **Excel:** \`openpyxl\`
+- **HTML parsing:** \`html5lib\`
+
+**Plotting:**
+
+- Use matplotlib unless the user requests seaborn or something else.
+- Default to using the \`SVG\` backend.
+- Don't style charts with specific colors unless requested.
+- Each plot should be in its own figure (no subplots unless asked).
+- Label axes, set a clear title, and format values for readability (e.g. ".0%" for percentages).
+- Use tight_layout() to avoid clipped labels.
+- Generate big charts, they can be scaled down later.
+
+**Working with pandas & counts / aggregations:**
+
+- \`value_counts()\` and \`groupby(...).size()\` return a **Series**.  
+  If you need a DataFrame with a named column of counts, convert with  
+  \`.\`reset_index(name="count")\` (or another explicit name).
+- Do **not** try to access a \`'count'\` column on the raw Series that comes back
+  from \`value_counts()\`—create the column first as shown above.
+- When dividing or comparing aggregated results, make sure the Series /
+  DataFrames share the same index (use \`.\`align()\`), or merge first:
+  \`df_a.merge(df_b, left_on=..., right_on=...)\`.
+
+**Best Practices:**
+
+- Use assert statements for sanity checks when appropriate.
+- Use context managers (with blocks) for file handling.
+- Catch exceptions narrowly (except ValueError, not a blanket except).
+
+**Avoid:**
+
+- Wildcard imports (e.g., from x import \*)
+- Overuse of lambda — define named functions if reused or non-trivial.
+- Nested list comprehensions (use loops for clarity)

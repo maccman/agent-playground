@@ -1,0 +1,100 @@
+---
+alwaysApply: true
+---
+
+# ES Module Compatibility Guide
+
+## Script Entry Point Detection
+
+When creating TypeScript scripts that can be both imported and executed directly, use ES module-compatible patterns:
+
+```typescript
+// ❌ CommonJS pattern (doesn't work with tsx/ES modules)
+if (require.main === module) {
+  main().catch(console.error)
+}
+
+// ✅ ES module pattern
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch(console.error)
+}
+```
+
+## File Path Utilities for ES Modules
+
+When you need `__filename` and `__dirname` equivalents in ES modules:
+
+```typescript
+import { fileURLToPath } from 'url'
+import path from 'path'
+
+// Get current file path for ES modules
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+```
+
+## Import Patterns
+
+Use consistent ES module import syntax:
+
+```typescript
+// ✅ Preferred imports
+import { config } from 'dotenv'
+import fs from 'fs'
+import path from 'path'
+
+// Load environment variables early
+config()
+```
+
+## TypeScript Script Structure
+
+For runnable TypeScript scripts in the `scripts/` directory:
+
+```typescript
+import { config } from 'dotenv'
+import { fileURLToPath } from 'url'
+import path from 'path'
+
+// Load environment variables
+config()
+
+// ES module file path utilities
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+// Main implementation
+class MyScript {
+  // Implementation here
+}
+
+async function main() {
+  // Script logic here
+}
+
+// Run script if executed directly
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch(console.error)
+}
+
+// Export for potential imports
+export { MyScript }
+```
+
+## Running Scripts
+
+Use `pnpm start` or `tsx` to run TypeScript scripts:
+
+```bash
+pnpm start scripts/my-script.ts
+# or
+tsx scripts/my-script.ts
+```
+
+## Key Points
+
+- Always use ES module syntax (`import`/`export`) in TypeScript files
+- Use `import.meta.url` for entry point detection instead of `require.main`
+- Include proper error handling with `.catch(console.error)`
+- Load environment variables with `config()` at the top of scripts
+- Export classes/functions for potential reuse while allowing direct execution

@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+pnpm-lock.yaml
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Logs
+*.log
+
+# Coverage
+coverage/
+
+# Temporary folders
+tmp/
+temp/
+
+# Generated files
+.next/
+.nuxt/
+.output/ 

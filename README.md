@@ -22,33 +22,23 @@ This project is designed to run on macOS.
 - [uv (Python package manager)](https://docs.astral.sh/uv/) - 10-100x faster than pip
 - [Homebrew](https://brew.sh/) - macOS package manager
 
-### Optional Tools for Media/Document Processing
-
-For image and PDF processing tasks, you may want to install:
-
-- **ImageMagick** - Image manipulation toolkit
-- **Ghostscript** - PostScript and PDF interpreter
-- **ffmpeg** - Video and audio processing
-
 ## Setup
 
-1. Install core dependencies (assuming you already have Homebrew/Node.js/pnpm already installed):
+1. Clone this repository
 
-   ```bash
-   brew install uv
-   ```
-
-2. (Optional) Install media processing tools:
+2. Install [uv (Python package manager)](https://github.com/astral-sh/uv)
+   
+3. (Optional) Install media processing tools:
    ```bash
    brew install imagemagick ghostscript ffmpeg
    ```
-3. Install dependencies:
+4. Install dependencies:
 
    ```bash
    pnpm install
    ```
 
-4. Setup your AI provider API keys:
+5. Setup your AI provider API keys:
 
    Copy the example environment file:
 
@@ -58,7 +48,7 @@ For image and PDF processing tasks, you may want to install:
 
 ## MCP
 
-Recommended MCP servers for Cursor AI:
+Recommended MCP servers for Cursor AI. Add them by heading to Cursor Settings > MCP Servers.
 
 ```json
 {

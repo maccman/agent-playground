@@ -1,0 +1,7 @@
+---
+alwaysApply: true
+---
+
+When working with data prefer to use CSV over other formats.
+
+`csvkit` and `csvsql` are great tools to work with CSV files.

@@ -35,7 +35,7 @@ Speak in plain, friendly language — assume the user has never used a terminal 
 
 8. **tsx (TypeScript runner)** — Already a devDependency, but verify global availability with `pnpm dlx tsx --version` or rely on the project-local install.
 
-9. **Media / PDF tools** — Install these Homebrew packages if not already present:
+9. **Media / PDF tools** — Optional (ask the user). Install these Homebrew packages if not already present:
    - `imagemagick`
    - `ghostscript`
    - `ffmpeg`

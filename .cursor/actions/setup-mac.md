@@ -50,7 +50,7 @@ Speak in plain, friendly language — assume the user has never used a terminal 
     - `ANTHROPIC_API_KEY`
     - `GOOGLE_GENERATIVE_AI_API_KEY`
 
-    Explain where to get each key (OpenAI: https://platform.openai.com/api-keys, Anthropic: https://console.anthropic.com/settings/keys, Google AI: https://aistudio.google.com/apikey). They only need the providers they plan to use.
+    Explain where to get each key (OpenAI: https://platform.openai.com/api-keys, Anthropic: https://console.anthropic.com/settings/keys, Google AI: https://aistudio.google.com/apikey). They only need the providers they plan to use. Ask them for each key one by one, and once you have all the keys, then update the .env file. 
 
 ## Finish
 
